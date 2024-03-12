@@ -3,5 +3,10 @@ import com.example.eventfinder.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findByEmailAndPassword(String email, String password);
+    User findByUsernameAndPassword(String username, String password);
+
+    boolean existsByUsername(String username);
+
+    boolean existsByEmail(String email);
+
 }
